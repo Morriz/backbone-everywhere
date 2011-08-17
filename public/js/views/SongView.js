@@ -19,10 +19,15 @@ module.exports = Backbone.View.extend({
     // there's a one-to-one correspondence between a **Song** and a **SongView** in this
     // app, we set a direct reference on the model for convenience.
     initialize: function () {
+    	this.initModel();
+        this.trigger('attach');
+    },
+    
+    initModel: function(model) {
+    	this.model = model || this.model;
         this.model.bind('change', this.render, this);
         this.model.view = this;
 //        this.model.fetch();
-        this.trigger('attach');
     },
 
     // Re-render the contents of the song item.
