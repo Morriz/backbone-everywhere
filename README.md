@@ -34,11 +34,15 @@ I have put the model.subscribe() statements in the router's handler logic (which
 
 ## Issues with this setup
 
-# Server availability
+###Server availability
 
 I have understood that Node.js is a non blocking server needing to serve it's payload asap. But to build a full html page and get async data from redis I simply have to wait for all to be ready before serving up the initial page. This might be costly in an environment with high concurrency.
 Maybe this doesn't have the impact I worry about.
-No benchmarks were run. 
+No benchmarks were run.
+
+###Hacky ways of piping functionality.
+
+Since this is a demo, and even tho I think I did quite a clean job, there are many rooms for improvement. But it shows that it's possible to have a high code reusage when it comes to asynchronous web programming ;)
 
 ## Modifications needed on required modules.
 

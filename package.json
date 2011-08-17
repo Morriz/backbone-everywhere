@@ -1,13 +1,14 @@
 {
   "name"        : "songlist",
-  "description" : "Persistant backbone storage through redis pub/sub and socket.io",
+  "description" : "Persistant backbone server/client MVC through redis pub/sub and socket.io",
   "version"     : "0.0.1",
-  "homepage"    : "https://github.com/Morriz/backbone-everywhere",
+  "homepage"    : "https://github.com/morriz/backbone-everywhere",
   "repository"  : {
     "type" : "git",
-    "url"  : "git://github.com/Morriz/backbone-everywhere.git"
+    "url"  : "git://github.com/morriz/backbone-everywhere.git"
   },
   "keywords" : [
+    "jquery",
     "backbone", 
     "redis", 
     "pubsub", 
