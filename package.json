@@ -1,0 +1,25 @@
+{
+  "name"        : "songlist",
+  "description" : "Persistant backbone storage through redis pub/sub and socket.io",
+  "version"     : "0.0.1",
+  "homepage"    : "https://github.com/Morriz/backbone-everywhere",
+  "repository"  : {
+    "type" : "git",
+    "url"  : "git://github.com/Morriz/backbone-everywhere.git"
+  },
+  "keywords" : [
+    "backbone", 
+    "redis", 
+    "pubsub", 
+    "socket",
+    "pushState"
+  ],
+  "engines"    : {
+    "node" : ">= 0.4.1 < 0.5.0"
+  },
+  "author" : {
+    "name"  : "Maurice Faber",
+    "email" : "morriz@idiotz.nl",
+    "url"   : "http://www.idiotz.nl"
+  }
+}

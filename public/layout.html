@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+        <link href="/css/app.css" media="all" rel="stylesheet" type="text/css"></link>
+        <script src="/browserify.js" type="text/javascript" charset="utf-8">
+        </script>
+        <script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8">
+        </script>
+<!--         <script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js" type="text/javascript" charset="utf-8">
+        </script>-->
+        <script type="text/javascript" charset="utf-8">
+            require('./clientonly');
+        </script>
+    </head>
+    <body>
+        <div class="layout" id="songlist-view"></div>
+        <div class="layout" id="song-view"></div>
+    </body>
+</html>

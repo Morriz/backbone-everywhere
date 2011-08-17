@@ -1,0 +1,14 @@
+<% if (total) { %>
+    <span class="song-count">
+        <span class="number"><%= remaining %></span>
+        <span class="word"><%= remaining == 1 ? 'item' : 'items' %></span> left.
+    </span>
+<% } %>
+<% if (published) { %>
+    <span class="song-clear">
+        <a href="#">
+            Clear<span class="number-done"> <%= published %></span>
+            checked <span class="word-done"><%= published == 1 ? 'item' : 'items' %></span>
+        </a>
+    </span>
+<% } %>

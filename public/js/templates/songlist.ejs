@@ -1,0 +1,45 @@
+<!-- SongList View -->
+<div class="title">
+    <h1>Song List</h1>
+</div>
+<div class="content">
+    <div id="create-song">
+        <input id="new-song" placeholder="Song title?" type="text" /><span class="ui-tooltip-top" style="display:none;">Press Enter to save as a new Song</span>
+    </div>
+    <div id="songs">
+        <ul id="song-list">
+            <li>
+                <div class="song published">
+                    <div class="display">
+                        <input class="check" type="checkbox" checked="checked"/>
+                        <div class="song-content">
+                            this one is checked
+                        </div>
+                        <span class="song-destroy"></span>
+                    </div>
+                    <div class="edit">
+                        <input class="song-input" type="text" value="" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="song">
+                    <div class="display">
+                        <input class="check" type="checkbox"/>
+                        <div class="song-content">
+                            this one is not checked
+                        </div>
+                        <span class="song-destroy"></span>
+                    </div>
+                    <div class="edit">
+                        <input class="song-input" type="text" value="" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="songlist-stats" class="song-stats">
+        <span class="song-count"><span class="number">1</span> <span class="word">item</span> left.</span>
+        <span class="song-clear"><a href="#">Clear <span class="number-published">1</span> checked <span class="word-published">item</span></a></span>
+    </div>
+</div>

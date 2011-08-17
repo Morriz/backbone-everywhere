@@ -1,0 +1,10 @@
+src/selector.js
+dist
+.settings
+*~
+*.diff
+*.patch
+test/qunit
+src/sizzle
+/*.html
+.DS_Store

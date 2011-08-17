@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script type="text/javascript" src="/browserify.js"></script>
+        <script type="text/javascript">
+            var files = require('files')
+            var $ = require('jquery');
+            
+            window.onload = function () {
+                Object.keys(files).forEach(function (name) {
+                    var div = $('<div>').appendTo($('#files'));
+                    
+                    $('<div>')
+                        .text(name)
+                        .appendTo(div)
+                    ;
+                    $('<textarea>')
+                        .val(files[name])
+                        .appendTo(div)
+                    ;
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <div id="files"></div>
+    </body>
+</html>

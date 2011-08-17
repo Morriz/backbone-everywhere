@@ -1,0 +1,16 @@
+.msg {
+    width: 500px;
+    margin-bottom: 50px;
+    border: 4px rgb(100,150,200) solid;
+}
+
+.body {
+    padding: 20px;
+}
+
+.title {
+    background-color:  rgb(100,150,200);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
