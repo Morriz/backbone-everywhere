@@ -86,10 +86,10 @@ module.exports = Backbone.View.extend({
         this.input.val('');
     },
 
-    // Clear all published song items, destroying their models.
+    // Destroy all published song models
     clearCompleted: function () {
         _.each(this.collection.published(), function (song) {
-            song.clear();
+            song.destroy();
         });
         return false;
     },
