@@ -128,11 +128,9 @@ app.get('*', function (req, res) {
             silent: true
         });
     }
-    
-    ifServerSendFullHtmlToClient = function() {
-        if (typeof runInClient !== 'undefined'){
-            return;
-        }
+
+    // global func to output views html
+    sendFullHtmlToClient = function() {
         var html = document.innerHTML;
         res.end(html);
         return;

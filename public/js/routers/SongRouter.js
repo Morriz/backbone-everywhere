@@ -13,7 +13,7 @@ module.exports = Backbone.Router.extend({
     songList: function () {
         if (!this.songListView) {
             var songCollection = new models.SongCollection;
-            if (typeof runInClient !== 'undefined') {
+            if (ONCLIENT) {
                 // subscribe to updates
                 songCollection.subscribe();
             }
@@ -23,9 +23,10 @@ module.exports = Backbone.Router.extend({
             Backbone.View.registerLayout(this.songListView);
         }
         this.songListView.collection.fetch({
-            success: _.bind(function(){
-            	ifServerSendFullHtmlToClient();
-            	Backbone.View.onlyShowLayout(this.songListView);
+            success: _.bind(function () {
+                if (ONSERVER) {
+                    sendFullHtmlToClient();
+                }
             }, this)
         });
         Backbone.View.onlyShowLayout(this.songListView);
@@ -35,9 +36,9 @@ module.exports = Backbone.Router.extend({
         var song = new models.Song({
             id: id
         });
-        if (typeof runInClient !== 'undefined') {
+        if (ONCLIENT) {
             // subscribe to updates
-        	song.subscribe();
+            song.subscribe();
         }
         if (!this.songView) {
             this.songView = new views.Song({
@@ -45,15 +46,18 @@ module.exports = Backbone.Router.extend({
             });
             Backbone.View.registerLayout(this.songView);
         } else {
-            // unsubscribe from previous model
-            this.songView.model.unsubscribe();
+            if (ONCLIENT) {
+                // unsubscribe from previous model
+                this.songView.model.unsubscribe();
+            }
             // and init with new
-        	this.songView.initModel(song);
+            this.songView.initModel(song);
         }
         this.songView.model.fetch({
-            success: _.bind(function(){
-            	ifServerSendFullHtmlToClient();
-            	Backbone.View.onlyShowLayout(this.songView);
+            success: _.bind(function () {
+                if (ONSERVER) {
+                    sendFullHtmlToClient();
+                }
             }, this)
         });
         Backbone.View.onlyShowLayout(this.songView);
