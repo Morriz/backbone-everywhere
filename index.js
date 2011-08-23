@@ -95,9 +95,9 @@ var ejs = require('ejs');
 
 // everything else maps onto backbone routers
 window = document = navigator = null;
-var $, app;
 app.get('*', function (req, res) {
 
+//    return res.end('OK');
     // setup our modified Backbone
     var Backbone = require(ROOT + 'backbone-modified');
     // modify the Backbone sync method to use redis
@@ -128,6 +128,9 @@ app.get('*', function (req, res) {
             silent: true
         });
     }
+
+    ONSERVER = true;
+    ONCLIENT = ! ONSERVER;
 
     // global func to output views html
     sendFullHtmlToClient = function() {

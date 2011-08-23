@@ -1,11 +1,6 @@
 var routers = require('./routers/index'),
     Backbone = require('./backbone-modified');
 
-// some global stuff
-ONSERVER = typeof runOnClient === 'undefined' ? true : false;
-ONCLIENT = ! ONSERVER;
-
-
 var startApp = function (backBoneOptions) {
 
     backBoneOptions = backBoneOptions || {};
