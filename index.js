@@ -95,7 +95,7 @@ var ejs = require('ejs');
 
 // everything else maps onto backbone routers
 window = document = navigator = null;
-app.get('*', function (req, res) {
+app.all('*', function (req, res) {
 
 //    return res.end('OK');
     // setup our modified Backbone
