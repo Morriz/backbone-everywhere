@@ -71,5 +71,5 @@ module.exports = Backbone.View.extend({
     // Remove the item, destroy the model.
     clear: function () {
         this.model.clear();
-    },
+    }
 });

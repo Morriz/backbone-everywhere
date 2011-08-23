@@ -14,7 +14,7 @@
 
 ## Browser compatibility
 
-I have tested this app to work with Firefox 5.0.1, Safari 5.1, Chrome 13, and Mobile Safari for iOS 4.3.
+I have tested this app to work with Firefox 5.0.1, Safari 5.1, Chrome 13, Mobile Safari for iOS 4.3 and IE9 standards mode (no pushState to).
 
 ## Why this app?
 
