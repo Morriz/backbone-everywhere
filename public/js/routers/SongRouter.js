@@ -24,12 +24,12 @@ module.exports = Backbone.Router.extend({
         }
         this.songListView.collection.fetch({
             success: _.bind(function () {
+                Backbone.View.onlyShowLayout(this.songListView);
                 if (ONSERVER) {
                     sendFullHtmlToClient();
                 }
             }, this)
         });
-        Backbone.View.onlyShowLayout(this.songListView);
     },
 
     song: function (id) {
@@ -55,11 +55,11 @@ module.exports = Backbone.Router.extend({
         }
         this.songView.model.fetch({
             success: _.bind(function () {
+                Backbone.View.onlyShowLayout(this.songView);
                 if (ONSERVER) {
                     sendFullHtmlToClient();
                 }
             }, this)
         });
-        Backbone.View.onlyShowLayout(this.songView);
     }
 });
