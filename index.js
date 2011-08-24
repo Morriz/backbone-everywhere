@@ -13,9 +13,9 @@ var browserifyBundle = browserify({
     '../../lib/backbone-store-sync-override', 'socket.io', 'templates'
   ],
   require: [
-    'jquery', 'underscore', 'backbone', 'ejs', './public/js/socket.io', './public/js/app', './public/js/clientonly'
-  ]//,
-  //filter: require('uglify-js')
+    'jquery', 'underscore', 'backbone', 'ejs', './public/js/app', './public/js/clientonly'
+  ],
+  filter: require('uglify-js')
 });
 
 // setup fileify
