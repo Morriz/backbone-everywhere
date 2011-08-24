@@ -9,7 +9,6 @@ ifServerSendFullHtmlToClient = function(){};
 
 // setup backbone redis
 var Sync = require('./backbone.redis');
-//var io = require('socket.io');
 var socket = io.connect();
 Sync.config({
     io: socket

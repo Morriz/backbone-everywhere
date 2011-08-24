@@ -64,7 +64,17 @@ Backbone.View.layouts = [];
 // register layouts
 Backbone.View.registerLayout = function (layout) {
     Backbone.View.layouts.push(layout);
-}
+};
+
+// creates wrapper that holds view function
+Backbone.View.getViewFunc = function (view) {
+  return function () {
+    Backbone.View.onlyShowLayout(view);
+    if (ONSERVER) {
+      sendFullHtmlToClient();
+    }
+  };
+};
 
 // func to toggle layout visibility
 Backbone.View.onlyShowLayout = function (layoutToShow) {
