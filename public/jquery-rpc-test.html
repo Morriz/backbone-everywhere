@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.5.js"
+    type="text/javascript">
+  
+</script>
+<script src="/js/jquery/jquery.jsonrpc.js" type="text/javascript">
+  
+</script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    function onError (err) {
+      console.log('ERROR:');
+      console.dir(err);
+    }
+
+    $.jsonRPC.setup({
+      endPoint: '/rpc'
+    });
+    $.jsonRPC.req('songs.get', [], function (result) {
+      debugger;
+      $('#test').html(result);
+    }, onError);
+  });
+</script>
+</head>
+<body>
+    <div id="test">noo!</div>
+</body>
+</html>
