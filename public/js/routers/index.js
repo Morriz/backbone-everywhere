@@ -1,6 +1,7 @@
 if (typeof module === 'undefined') {
-    module = {};
+  module = {};
 }
 module.exports = {
-    'Song': require('./SongRouter')
+  Song: require('./SongRouter'),
+  Track: require('./TrackRouter')
 }

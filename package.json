@@ -1,16 +1,26 @@
 {
   "name"        : "songlist",
   "description" : "Persistant backbone server/client MVC through redis pub/sub and socket.io",
-  "version"     : "0.0.1",
+  "version"     : "0.0.5",
   "homepage"    : "https://github.com/morriz/backbone-everywhere",
   "repository"  : {
     "type" : "git",
     "url"  : "git://github.com/morriz/backbone-everywhere.git"
   },
+  "dependencies"  : {
+    "underscore": "",
+    "express": ""
+    "connect-gzip": ""
+    "redis": "",
+    "socket.io":"",
+    "jsdom": ""
+  },
   "keywords" : [
     "jquery",
+    "jsdom",
     "backbone", 
-    "redis", 
+    "redis",
+    "socket.io"
     "pubsub", 
     "socket",
     "pushState"

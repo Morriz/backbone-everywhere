@@ -14,6 +14,7 @@
 .cache
 .project
 .settings
+.buildpath
 nbproject
 thumbs.db
 
@@ -36,4 +37,3 @@ build/buildinfo.properties
 build/config/buildinfo.properties
 
 _dev
-

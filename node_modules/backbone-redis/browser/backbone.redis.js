@@ -39,15 +39,16 @@
         return model;
     }
     var useCallbacksOnce = function (channel) {
-        var callbacks = callbacksRegistry[channel];
-        if (!callbacks) return;
-        delete callbacksRegistry[channel];
-        return callbacks;
+      var callbacks = callbacksRegistry[channel];
+      if (!callbacks) return;
+      delete callbacksRegistry[channel];
+      return callbacks;
     }
     var registerOnce = function (model, options) {
+        var channel = options.channel; 
         // use the entire options hash as key
-        modelRegistry[options.channel] = model;
-        callbacksRegistry[options.channel] = {
+        modelRegistry[channel] = model;
+        callbacksRegistry[channel] = {
             success: options.success,
             error: options.error
         };
@@ -349,6 +350,11 @@
             options.type || (options.type = model.type || model.collection.type);
             options.channel || (options.channel = model.getChannel());
             options.method || (options.method = method);
+            options.indexProps = model.indexProps || (model.model && model.model.prototype.indexProps ? model.model.prototype.indexProps : []);
+            options.extKeys = model.extKeys || (model.model && model.model.prototype.extKeys ? model.model.prototype.extKeys : []);
+            if (typeof model == Backbone.Collection && model.extKey) {
+              options.extKey = model.extKey;
+            }
 
             registerOnce(model, options);
 

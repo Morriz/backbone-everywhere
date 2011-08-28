@@ -1,8 +1,11 @@
 if (typeof module === 'undefined') {
-    module = {};
+  module = {};
 }
 module.exports = {
-    Song: require('./SongModel'),
-    SongCollection: require('./SongCollection')
+  User: require('./UserModel'),
+  UserCollection: require('./UserCollection'),
+  Song: require('./SongModel'),
+  SongCollection: require('./SongCollection'),
+  Track: require('./TrackModel'),
+  TrackCollection: require('./TrackCollection')
 }
-

@@ -6,14 +6,14 @@ module.exports = Backbone.View.extend({
 
     tagName: 'li',
 
-    templateHtml: templates.songlistItem,
+    templateHtml: templates.tracklistItem,
 
     // The DOM events specific to an item.
     events: {
-        'click .song-check': 'toggleActivated',
-        'dblclick div.song-content': 'edit',
-        'click span.song-destroy': 'remove',
-        'keypress .song-input': 'updateOnEnter'
+        'click .track-check': 'toggleActivated',
+        'dblclick div.track-content': 'edit',
+        'click span.track-destroy': 'remove',
+        'keypress .track-input': 'updateOnEnter'
     },
 
     // The SongView listens for changes to its model, re-rendering. Since
@@ -26,7 +26,7 @@ module.exports = Backbone.View.extend({
         this.model.view = this;
     },
 
-    // Render the contents of the song item.
+    // Render the contents of the track item.
     render: function () {
         this.$el.html(this.template(this.model.toJSON()));
         this._enrich();
@@ -34,7 +34,7 @@ module.exports = Backbone.View.extend({
     },
 
     _enrich: function () {
-        this.input = this.$('.song-input');
+        this.input = this.$('.track-input');
         this.input.bind('blur', _.bind(this.close, this));
     },
 
@@ -49,10 +49,10 @@ module.exports = Backbone.View.extend({
         this.input.focus();
     },
 
-    // Close the "editing" mode, saving changes to the song.
+    // Close the "editing" mode, saving changes to the track.
     close: function () {
         this.model.save({
-            title: this.input.val()
+            title: this.input.val(),
         });
         this.$el.removeClass("editing");
     },

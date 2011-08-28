@@ -14,8 +14,8 @@ var browserifyBundle = browserify({
   ],
   require: [
     'jquery', 'underscore', 'backbone', 'ejs', './public/js/app', './public/js/clientonly'
-  ],
-  filter: require('uglify-js')
+  ]
+  //,filter: require('uglify-js')
 });
 
 // setup fileify
@@ -102,7 +102,7 @@ var ejs = require('ejs');
 
 // everything else maps onto backbone routers
 window = document = navigator = null;
-app.all('*', function (req, res) {
+app.all('*', function (req, res, next) {
 
   // return res.end('OK');
   // setup our modified Backbone
@@ -149,6 +149,7 @@ app.all('*', function (req, res) {
   }
 
   // load url fragment directly
-  Backbone.history.loadUrl(req.url.substr(1));
+  var matched = Backbone.history.loadUrl(req.url.substr(1));
+  if (!matched) next();//res.end('404 Not Found');
 
 });

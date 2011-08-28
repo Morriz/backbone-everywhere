@@ -1,0 +1,13 @@
+<!-- TrackListItem View -->
+<div class="track <%= published ? 'published' : '' %>">
+    <div class="display">
+        <input class="track-check check" type="checkbox"<%= published ? 'checked="checked"' : '' %>/>
+        <div class="track-content">
+            <a href="/tracks/<%= id %>"><%= title %></a>
+        </div>
+        <span class="track-destroy destroy"></span>
+    </div>
+    <div class="edit">
+        <input class="track-input" type="text" value="<%= title %>" />
+    </div>
+</div>

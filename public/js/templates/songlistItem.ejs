@@ -1,10 +1,10 @@
 <div class="song <%= published ? 'published' : '' %>">
     <div class="display">
-        <input class="check" type="checkbox"<%= published ? 'checked="checked"' : '' %>/>
+        <input class="song-check check" type="checkbox"<%= published ? 'checked="checked"' : '' %>/>
         <div class="song-content">
             <a href="/songs/<%= id %>"><%= title %></a>
         </div>
-        <span class="song-destroy"></span>
+        <span class="song-destroy destroy"></span>
     </div>
     <div class="edit">
         <input class="song-input" type="text" value="<%= title %>" />

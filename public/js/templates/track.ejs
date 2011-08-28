@@ -1,0 +1,14 @@
+<!-- Track View -->
+<div class="title">
+    <h1>Track Details</h1>
+</div>
+<div class="content">
+    Author: <span class="display"><%= author %></span><br />
+    Title: <span class="display"><%= title %></span><span class="edit"><input class="input" type="text" value="<%= title %>" /></span><br/>
+    Published: <span class="display"><%= published %></span><span class="edit"><input class="input" type="text" value="<%= published %>" /></span><br />
+    Audio:
+    <audio controls="controls">
+        <source src="<%= source %>" type="audio/aac" />
+        Your browser does not support the audio element.
+    </audio>
+</div>

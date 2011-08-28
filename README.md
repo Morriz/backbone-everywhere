@@ -34,19 +34,27 @@ I have put the model.subscribe() statements in the router's handler logic (which
 
 ## Issues with this setup
 
-###Server availability
+### Server availability
 
-I have understood that Node.js is a non blocking server needing to serve it's payload asap. But to build a full html page and get async data from redis I simply have to wait for all to be ready before serving up the initial page. This might be costly in an environment with high concurrency.
-Maybe this doesn't have the impact I worry about.
-No benchmarks were run.
+The initial page needs to be rendered server side and doesn't load that quickly, but once it's rendered the server responds very fast.
+Because Node.js is a non blocking server it needs to serve it's payload asap. But to build a full html page and get async data from redis costs some time.
+No benchmarks were run, but with these response times in my browser my love for Node keeps growing.
 
-###Hacky ways of piping functionality.
+### Foreign keys
+
+I've devised a simple foreign key solution for the key-value store. All data is indexed according to an array of model.indexProps and model.extKeys.
+This way it's possible to set model|collection.extKey to fetch models/collections by one external key only.
+That works fine for my setup, but I foresee a need for many to many relationships. I will add that later.
+
+### Hacky ways of piping functionality.
 
 Since this is a demo, and even tho I think I did quite a clean job, there are many rooms for improvement. But it shows that it's possible to have a high code reusage when it comes to asynchronous web programming ;)
 
 ## Modifications needed on required modules.
 
-I had to do some modifications to make some required modules work as expected in a CommonJS environment. On some occasions I simply had to fix a bug.
+I had to do some modifications to make some required modules work as expected in a CommonJS environment.
+Backbone-redis was heavily modified to enable foreign keys and make it work on the server side as well.
+On some occasions I simply had to fix a bug.
 Please look into the node_modules folder for the adapted/fixed modules.
 
 The most important (from the top of my head) are:
@@ -58,4 +66,9 @@ The most important (from the top of my head) are:
 
 All of my changes are already submitted to the original authors, and I hope these will be included in some form in their modules.
 
-Hopefully this setup can be used as an example to create a web application that complies with the "write once, run anywhere" paradigm. 
+Hopefully this setup can be used as an example to create a web application that complies with the "write once, run anywhere" paradigm.
+
+## TODO's
+
+- many to many relations solution for the keystore
+- implement bricks.js once it's up to speed with express?

@@ -3,18 +3,11 @@
     <h1>Song Details</h1>
 </div>
 <div class="content">
-    <div id="song">
-        <div class="display">
-            <div class="song-content">
-                Title: <%= title %><br />
-                Checked: <%= published %><br />
-            </div>
-        </div>
-        <div class="edit">
-            <input class="song-input" type="text" value="<%= title %>" />
+    <div class="song">
+        <div class="content">
+            Title: <span class="display title"><%= title %></span><span class="edit"><input class="input title" type="text" value="<%= title %>" /></span><br/>
+            Checked: <span class="display published"><%= published %></span><span class="edit"><input class="input published" type="text" value="<%= published %>" /></span>
         </div>
     </div>
-    <div id="song-stats" class="song-stats">
-        <span class="song-count"><span class="number">1</span> <span class="word">item</span> left.</span>
-    </div>
+    <div class="tracklist-subview"><!-- INCLUDE trackList.ejs --></div>
 </div>
