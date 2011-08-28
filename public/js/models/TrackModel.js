@@ -5,7 +5,7 @@ module.exports = Backbone.Model.extend({
   type: 'tracks',
 
   indexProps: ['title', 'published'],
-  
+
   extKeys: ['authorId', 'groupId', 'songId'],
 
   // Default attributes for the track.

@@ -1,5 +1,4 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td
-    {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
     margin: 0;
     padding: 0;
     border: 0;
@@ -17,7 +16,7 @@ body {
     background: white;
 }
 
-ol,ul {
+ol, ul {
     list-style: none;
 }
 
@@ -55,6 +54,7 @@ body {
     padding: 20px 0 30px 0;
     line-height: 1;
 }
+
 .layout h2 {
     font-size: 24px;
 }
@@ -116,7 +116,7 @@ body {
     border-bottom: 0;
 }
 
-.layout .editing .display,.layout .edit {
+.layout .editing .display, .layout .edit {
     display: none;
 }
 
@@ -238,8 +238,7 @@ body {
 /*
  *  FranÃ§ois 'cahnory' Germain
  */
-.ui-tooltip,.ui-tooltip-top,.ui-tooltip-right,.ui-tooltip-bottom,.ui-tooltip-left
-    {
+.ui-tooltip, .ui-tooltip-top, .ui-tooltip-right, .ui-tooltip-bottom, .ui-tooltip-left {
     color: #ffffff;
     cursor: normal;
     display: -moz-inline-stack;
@@ -266,28 +265,19 @@ body {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
-    -o-box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0 2px
-        #666666, inset 0 -2px 2px #444444;
-    -moz-box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0 2px
-        #666666, inset 0 -2px 2px #444444;
-    -khtml-box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0
-        2px #666666, inset 0 -2px 2px #444444;
-    -webkit-box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0
-        2px #666666, inset 0 -2px 2px #444444;
-    box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0 2px
-        #666666, inset 0 -2px 2px #444444;
+    -o-box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0 2px #666666, inset 0 -2px 2px #444444;
+    -moz-box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0 2px #666666, inset 0 -2px 2px #444444;
+    -khtml-box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0 2px #666666, inset 0 -2px 2px #444444;
+    -webkit-box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0 2px #666666, inset 0 -2px 2px #444444;
+    box-shadow: 0 1px 2px #000000, inset 0 0 0 1px #222222, inset 0 2px #666666, inset 0 -2px 2px #444444;
     background-color: #3b3b3b;
     background-image: -moz-linear-gradient(top, #555555, #222222);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #555555),
-        color-stop(1, #222222) );
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#555555,
-        EndColorStr=#222222 );
-    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#555555,
-        EndColorStr=#222222 );
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #555555), color-stop(1, #222222));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = #555555, EndColorStr = #222222);
+    -ms-filter: progid: DXImageTransform . Microsoft . gradient(startColorStr = #555555, EndColorStr = #222222);
 }
 
-.ui-tooltip:after,.ui-tooltip-top:after,.ui-tooltip-right:after,.ui-tooltip-bottom:after,.ui-tooltip-left:after
-    {
+.ui-tooltip:after, .ui-tooltip-top:after, .ui-tooltip-right:after, .ui-tooltip-bottom:after, .ui-tooltip-left:after {
     content: "\25B8";
     display: block;
     font-size: 2em;
@@ -296,7 +286,7 @@ body {
     position: absolute;
 }
 
-.ui-tooltip:after,.ui-tooltip-bottom:after {
+.ui-tooltip:after, .ui-tooltip-bottom:after {
     color: #2a2a2a;
     bottom: 0;
     left: 1px;

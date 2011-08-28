@@ -6,7 +6,7 @@ module.exports = Backbone.Collection.extend({
   type: 'users',
 
   model: UserModel,
-  
+
   orderBy: 'lastName',
 
   // Filter down the list of all user items that are published.

@@ -6,7 +6,7 @@ var startApp = function (backBoneOptions) {
   backBoneOptions = backBoneOptions || {};
 
   // register routers
-  for ( var i in routers) {
+  for (var i in routers) {
     new routers[i]();
   }
 

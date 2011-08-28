@@ -5,7 +5,7 @@ module.exports = Backbone.Model.extend({
   type: 'songs',
 
   indexProps: ['title', 'published'],
-  
+
   extKeys: ['authorId', 'groupId', 'songId'],
 
   // Default attributes for the song.
@@ -22,14 +22,15 @@ module.exports = Backbone.Model.extend({
       key: 'tracks',
       relatedModel: 'TrackModel',
       collectionType: 'TrackCollection'
-    }, {
+    },
+    {
       type: '',// Backbone.HasMany,
       key: 'authors',
       relatedModel: 'UserModel',
       collectionType: 'UserCollection'
     }
   ],
-  
+
   initialize: function () {
     // too bad bb events won't accepts an array of event names:
     this.bind('remove', this._removeView, this);

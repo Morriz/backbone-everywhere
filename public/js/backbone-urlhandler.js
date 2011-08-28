@@ -72,10 +72,10 @@ view.prototype.route = function(path, noscroll) {
     path = path.substr(1);
     var matched = _.any(Backbone.history.handlers, function(handler) {
       if (handler.route.test(path)) {
-      Backbone.history.navigate(path);
-      noscroll || that.scrollTop();
-      handler.callback(path);
-      return true;
+        Backbone.history.navigate(path);
+        noscroll || that.scrollTop();
+        handler.callback(path);
+        return true;
       }
     });
     return !matched;

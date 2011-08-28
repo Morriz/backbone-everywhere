@@ -67,7 +67,7 @@ module.exports = Backbone.Router.extend({
     if (!song.tracks) {
       // try to get the bootstrapped collection
       var tracks = this.songView ? this.songView.subViews.trackList.collection
-                                 : new models.TrackCollection;
+        : new models.TrackCollection;
       tracks.subscribe();
       // set external key relation
       tracks.extKey = {

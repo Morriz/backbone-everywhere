@@ -3,7 +3,7 @@ LIB = __dirname + '/lib/';
 
 // setup application
 var express = require('express'), sys = require('sys'), fs = require('fs'), redis = require('redis'), io =
-    require('socket.io'), Sync = require('backbone-redis'), app = module.exports = express.createServer();
+  require('socket.io'), Sync = require('backbone-redis'), app = module.exports = express.createServer();
 
 // init browserify bundle
 var browserify = require('browserify');

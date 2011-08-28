@@ -28,7 +28,7 @@ _.extend(Backbone.Collection.prototype, {
   dateModified: null, // same
   orderBy: 'dateModified',
   orderDir: 'desc',
-  
+
   // items are sorted by our sortBy value
   comparator: function (item) {
     // since 'this' doesn't reference our own scope we have
@@ -47,7 +47,7 @@ _.extend(Backbone.Collection.prototype, {
     // reverse string sort
     return String.fromCharCode.apply(String,
       _.map(val.split(''), function (c) {
-          return 0xffff - c.charCodeAt();
+        return 0xffff - c.charCodeAt();
       })
     );
   },
@@ -78,7 +78,7 @@ BackboneViewExtend = Backbone.View.extend;
 
 // save own properties
 var ownProps = [];
-for(var prop in Backbone.View) {
+for (var prop in Backbone.View) {
   var val = Backbone.View[prop];
   if (Backbone.View.hasOwnProperty(prop) || _.isFunction(val)) {
     ownProps[prop] = val;
@@ -111,11 +111,11 @@ _.extend(Backbone.View.prototype, {
       this.template = this.renderEngine.compile(this.templateHtml);
     }
   },
-  
+
   show: function () {
     this.$el.css('display', 'block');
   },
-  
+
   hide: function () {
     this.$el.css('display', 'none');
   },

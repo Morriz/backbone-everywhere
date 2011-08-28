@@ -37,7 +37,7 @@
       withOptions: function(params, callback) {
         this._validateConfigParams(params);
         // No point in running if there isn't a callback received to run
-        if(typeof(callback) === 'undefined') throw("No callback specified");
+        if (typeof(callback) === 'undefined') throw("No callback specified");
 
         origParams = {endPoint: this.endPoint, namespace: this.namespace};
         this.setup(params);
@@ -58,7 +58,7 @@
        * @return {undefined}
        */
       request: function(method, options) {
-        if(typeof(options) === 'undefined') {
+        if (typeof(options) === 'undefined') {
           options = { id: 1 };
         }
         if (typeof(options.id) === 'undefined') {
@@ -75,7 +75,7 @@
 
         return true;
       },
-      
+
       req: function(method, params, successCallback, errorCallback) {
         return this.request(method, {
           'params': params,
@@ -99,12 +99,12 @@
        * @return {undefined}
        */
       batchRequest: function(requests, options) {
-        if(typeof(options) === 'undefined') {
+        if (typeof(options) === 'undefined') {
           options = {};
         }
 
         // Ensure our requests come in as an array
-        if(!$.isArray(requests) || requests.length === 0) throw("Invalid requests supplied for jsonRPC batchRequest. Must be an array object that contain at least a method attribute");
+        if (!$.isArray(requests) || requests.length === 0) throw("Invalid requests supplied for jsonRPC batchRequest. Must be an array object that contain at least a method attribute");
 
         // Make sure each of our request objects are valid
         var _that = this;
@@ -118,10 +118,10 @@
         this._validateRequestCallbacks(options.success, options.error);
 
         var data = [],
-            request;
+          request;
 
         // Prepare our request object
-        for(var i = 0; i<requests.length; i++) {
+        for (var i = 0; i < requests.length; i++) {
           request = requests[i];
           data.push(this._requestDataObj(request.method, request.params, request.id));
         }
@@ -131,14 +131,14 @@
 
       // Validate a params hash
       _validateConfigParams: function(params) {
-        if(typeof(params) === 'undefined') {
+        if (typeof(params) === 'undefined') {
           throw("No params specified");
         }
         else {
-          if(params.endPoint && typeof(params.endPoint) !== 'string'){
+          if (params.endPoint && typeof(params.endPoint) !== 'string') {
             throw("endPoint must be a string");
           }
-          if(params.namespace && typeof(params.namespace) !== 'string'){
+          if (params.namespace && typeof(params.namespace) !== 'string') {
             throw("namespace must be a string");
           }
         }
@@ -146,16 +146,16 @@
 
       // Request method must be a string
       _validateRequestMethod: function(method) {
-        if(typeof(method) !== 'string') throw("Invalid method supplied for jsonRPC request")
+        if (typeof(method) !== 'string') throw("Invalid method supplied for jsonRPC request")
         return true;
       },
 
       // Validate request params.  Must be a) empty, b) an object (e.g. {}), or c) an array
       _validateRequestParams: function(params) {
-        if(!(params === null ||
-             typeof(params) === 'undefined' ||
-             typeof(params) === 'object' ||
-             $.isArray(params))) {
+        if (!(params === null ||
+          typeof(params) === 'undefined' ||
+          typeof(params) === 'object' ||
+          $.isArray(params))) {
           throw("Invalid params supplied for jsonRPC request. It must be empty, an object or an array.");
         }
         return true;
@@ -163,10 +163,10 @@
 
       _validateRequestCallbacks: function(success, error) {
         // Make sure callbacks are either empty or a function
-        if(typeof(success) !== 'undefined' &&
-           typeof(success) !== 'function') throw("Invalid success callback supplied for jsonRPC request");
-        if(typeof(error) !== 'undefined' &&
-         typeof(error) !== 'function') throw("Invalid error callback supplied for jsonRPC request");
+        if (typeof(success) !== 'undefined' &&
+          typeof(success) !== 'function') throw("Invalid success callback supplied for jsonRPC request");
+        if (typeof(error) !== 'undefined' &&
+          typeof(error) !== 'function') throw("Invalid error callback supplied for jsonRPC request");
         return true;
       },
 
@@ -200,10 +200,10 @@
       _requestDataObj: function(method, params, id) {
         var dataObj = {
           jsonrpc: this.version,
-          method: this.namespace ? this.namespace +'.'+ method : method,
+          method: this.namespace ? this.namespace + '.' + method : method,
           id: id
         }
-        if(typeof(params) !== 'undefined') {
+        if (typeof(params) !== 'undefined') {
           dataObj.params = params;
         }
         return dataObj;
@@ -212,7 +212,7 @@
       // Handles calling of error callback function
       _requestError: function(json, error) {
         if (typeof(error) !== 'undefined' && typeof(error) === 'function') {
-            error(this._response());
+          error(this._response());
         }
       },
 
@@ -223,13 +223,13 @@
         var response = this._response(json);
 
         // If we've encountered an error in the response, trigger the error callback if it exists
-        if(response.error && typeof(error) === 'function') {
+        if (response.error && typeof(error) === 'function') {
           error(response.error);
           return;
         }
 
         // Otherwise, successful request, run the success request if it exists
-        if(typeof(success) === 'function') {
+        if (typeof(success) === 'function') {
           success(response.result);
         }
       },
@@ -244,12 +244,12 @@
         }
         else {
           try {
-            if(typeof(json) === 'string') {
-              json = eval ( '(' + json + ')' );
+            if (typeof(json) === 'string') {
+              json = eval('(' + json + ')');
             }
 
             if (($.isArray(json) && json.length > 0 && json[0].jsonrpc !== '2.0') ||
-                (!$.isArray(json) && json.jsonrpc !== '2.0')) {
+              (!$.isArray(json) && json.jsonrpc !== '2.0')) {
               throw 'Version error';
             }
 

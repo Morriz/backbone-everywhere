@@ -6,7 +6,7 @@ module.exports = Backbone.Collection.extend({
   type: 'tracks',
 
   model: TrackModel,
-  
+
   orderBy: 'title',
 
   // Filter down the list of all track items that are published.

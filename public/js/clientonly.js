@@ -5,7 +5,8 @@ ONSERVER = false;
 ONCLIENT = !ONSERVER;
 
 // disable server funcs
-ifServerSendFullHtmlToClient = function () {};
+ifServerSendFullHtmlToClient = function () {
+};
 
 // setup backbone redis
 var Sync = require('./backbone.redis');
