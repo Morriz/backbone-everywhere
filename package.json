@@ -9,8 +9,8 @@
   },
   "dependencies"  : {
     "underscore": "",
-    "express": ""
-    "connect-gzip": ""
+    "express": "",
+    "connect-gzip": "",
     "redis": "",
     "socket.io":"",
     "jsdom": ""
@@ -20,7 +20,7 @@
     "jsdom",
     "backbone", 
     "redis",
-    "socket.io"
+    "socket.io",
     "pubsub", 
     "socket",
     "pushState"

@@ -38,6 +38,7 @@ I have put the model.subscribe() statements in the router's handler logic (which
 
 The initial page needs to be rendered server side and doesn't load that quickly, but once it's rendered the server responds very fast.
 Because Node.js is a non blocking server it needs to serve it's payload asap. But to build a full html page and get async data from redis costs some time.
+But I think any web application growing in complexity has these issues, and with the help of some best practices like caching and latency reduction, these could be addressed similarly. 
 No benchmarks were run, but with these response times in my browser my love for Node keeps growing.
 
 ### Foreign keys
@@ -49,6 +50,16 @@ That works fine for my setup, but I foresee a need for many to many relationship
 ### Hacky ways of piping functionality.
 
 Since this is a demo, and even tho I think I did quite a clean job, there are many rooms for improvement. But it shows that it's possible to have a high code reusage when it comes to asynchronous web programming ;)
+
+### "I am unable to install this with NPM !?"
+
+I don't want to register this stack with NPM, as it is the product of several npm packages glued together. Each of these are valid NPM packages by themselves, to be used as building blocks, while my stack is the 'end product', a working application USING these building blocks, as opposed to be built UPON them.
+Actually, I surely hope that the panel behind the NPM registration process filters out stacks like mine, as I don't think the NPM registry should become convoluted with 'complex' modules comprising multiple modules already in the registry.
+
+I do see the fact that it would be convenient to just be able to 'npm install' this, but I also think it a good idea to get a grip on the underpinnings, and follow the inevitable learning curve that goes with it.
+
+So I advise to look at the package.json file to see which modules it needs, and to install them manually.
+All that remains is to get redis installed and listening to the port in index.js, which is 6379 (which was used in the backbone-redis I forked, if my memory is correct).
 
 ## Modifications needed on required modules.
 
