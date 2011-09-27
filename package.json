@@ -10,6 +10,7 @@
   "dependencies"  : {
     "request": "",
     "cssom": "",
+    "contextify": "",
     "underscore": "",
     "express": "",
     "connect-gzip": "",
