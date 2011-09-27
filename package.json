@@ -16,6 +16,7 @@
     "ejs": "",
     "underscore": "",
     "express": "",
+    "connect-redis": "",
     "connect-gzip": "",
     "redis": "",
     "socket.io":"",
