@@ -34,6 +34,9 @@ browserifyBundle.use(fileified);
 var rpc = require('jsonrpc2');
 var services = require(LIB + 'services');
 
+// session store
+var RedisStore = require('connect-redis')(express);
+
 // Configuration
 app.configure(function () {
   app.use(express.logger());
@@ -41,7 +44,8 @@ app.configure(function () {
   app.use(express.cookieParser());
   app.use(express.methodOverride());
   app.use(express.session({
-    secret: 'bladi'
+    secret: 'bladi',
+    store: new RedisStore 
   }));
   // add compression to response output
   app.use(require('connect-gzip').gzip());
