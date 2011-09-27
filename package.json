@@ -13,6 +13,7 @@
     "contextify": "",
     "hooks": "",
     "browserify": "",
+    "ejs": "",
     "underscore": "",
     "express": "",
     "connect-gzip": "",
