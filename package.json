@@ -8,6 +8,7 @@
     "url"  : "git://github.com/morriz/backbone-everywhere.git"
   },
   "dependencies"  : {
+    "request": "",
     "underscore": "",
     "express": "",
     "connect-gzip": "",
