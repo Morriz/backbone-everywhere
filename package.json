@@ -12,6 +12,7 @@
     "cssom": "",
     "contextify": "",
     "hooks": "",
+    "browserify": "",
     "underscore": "",
     "express": "",
     "connect-gzip": "",
