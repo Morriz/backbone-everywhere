@@ -9,6 +9,7 @@
   },
   "dependencies"  : {
     "request": "",
+    "cssom": "",
     "underscore": "",
     "express": "",
     "connect-gzip": "",
